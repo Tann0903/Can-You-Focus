@@ -1,0 +1,32 @@
+Body {
+    background-color: orange;
+    color: black;
+
+}
+
+h1 {
+    text-align: center;
+    font-weight: 500px;
+    font-size: 30;
+    /* font-family - something gothic lol */
+    /* remember to ask paul is fav font site */
+} 
+
+/* Grid's need to be used here */
+/* 5x5? */
+/* as eric about the icon sites he recommends */
+
+* {
+    font-family: Helvetica;
+    font-size: 1.4em;
+    color: black;
+    text-align: center;
+}
+
+.grid-containerBoard {
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    grid-template-rows: 3em 1.6em 1.6em;
+    ;
+    
+}
