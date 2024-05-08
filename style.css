@@ -1,5 +1,9 @@
 Body {
-    background-color: orange;
+    background-image: url(img/HWBackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* moving background or changing background that be distracting? */
+    /* distracting sounds? */
     color: black;
 
 }
@@ -12,21 +16,25 @@ h1 {
     /* remember to ask paul is fav font site */
 } 
 
-/* Grid's need to be used here */
-/* 5x5? */
-/* as eric about the icon sites he recommends */
-
 * {
     font-family: Helvetica;
     font-size: 1.4em;
-    color: black;
+    color: white;
     text-align: center;
 }
 
-.grid-containerBoard {
+img {
+    width: 100%;
+}
+
+.gameBoard {
     display: grid;
-    grid-template-columns: 20% 20% 20%;
-    grid-template-rows: 3em 1.6em 1.6em;
-    ;
+    grid-template-columns: repeat(2, 1fr);
+/* defines the columns of the grid. It creates two columns of equal width (1fr means 1 fractional unit, dividing the available space equally).*/
+    gap: 20px;
+/* specifies the gap between grid items to be 20 pixels. */
+    max-width: 300px;
+    margin: 0 auto; 
+/* Automatically centers the cards */
     
 }
