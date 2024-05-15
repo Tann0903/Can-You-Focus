@@ -2,8 +2,6 @@ Body {
     background-image: url(img/HWBackground.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    /* moving background or changing background that be distracting? */
-    /* distracting sounds? */
     color: black;
 
 }
@@ -13,22 +11,16 @@ Body {
     src: url(fonts/SCARYNIZO.otf);
 }
 
-h6 {
+h1 {
     font-family: nizo;
     font-size: 60px;
-}
-
-
-h1 {
     text-align: center;
     font-weight: 500px;
     font-size: 30;
-    /* font-family - something gothic lol */
-    /* remember to ask paul is fav font site */
 } 
 
 * {
-    font-family: Helvetica;
+    font-family: nizo;
     font-size: 1.4em;
     color: white;
     text-align: center;
@@ -40,16 +32,14 @@ img {
 
 .gameBoard {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-/* defines the columns of the grid. It creates two columns of equal width (1fr means 1 fractional unit, dividing the available space equally).*/
-    gap: 20px;
-/* specifies the gap between grid items to be 20 pixels. */
-    max-width: 300px;
+    grid-template-columns: repeat(5, 2fr);
+    gap: 10px;
+    max-width: 600px;
     margin: 0 auto; 
-/* Automatically centers the cards */
 }
     
 button {
     background-color: red;
     font-size: small;
 }
+

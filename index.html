@@ -1,13 +1,3 @@
-<!-- Use the <embed>... </embed> element
-Use the autoplay attribute
-Set the width and height so that the player is hidden on the page
--distracting sounds
--creepy laughter when you win
--church bells when you lost -->
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,23 +9,41 @@ Set the width and height so that the player is hidden on the page
 
 </head>
 <body>
-    <h6>testing new text</h6>
     <h1>CAN YOU FOCUS?</h1>
 
-<div class="gameBoard">
-    <!-- /* Horror or halloween themed icons/cards */ -->
+<div id="divGameBaord" class="gameBoard">
+
     <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
     <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
     <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
     <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
-    
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+    <img src="img/stamp-skeleton-icon.png" class="gameIcons" />
+
+
+   
 </div>
 
-<p>Your Guesses: <span name="aa" id="spanuserGuesses" class="userGuesses">0</span></p> 
-<p>Time Left: <span class="timer"></span></p>
+<div>
+    <p id="resultMessage"></p>
+</div>
+
+<div>
+    <p id="guesses"> Your Guesses: </p>
+</div> 
+<div>
+<p id="timer"> Time Left: 60</p>
+</div>
 <div>
     <button id="restartButton" onclick="restartGame()">RESTART</button>
 </div>
+
+
 
 </body>
 </html>
