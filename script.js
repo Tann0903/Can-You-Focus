@@ -1,22 +1,3 @@
-// options_unclicked = [1, 2, 3, 4]
-// clicked = []
-
-// // win logic
-// winning_combos = [
-//     [1,2],
-//     [3,4],
-// ]
-
-// 1 = document.querySelector('button1')
-// userClick()
-// clicked.push()
-
-// // compare clicked to winning combos
-// if clicked === winning_combos[1]{
-//     console.log(win)
-// }
-
-// ***************************************
 // STACK OVERFLOW SHUFFLE
 function shuffle(array) {
   let currentIndex = array.length;
@@ -38,32 +19,67 @@ function shuffle(array) {
 }
 
 let gameIcons = [
-    { value: "Ghost", image: "./img/Ghost-icon.png" },
-    { value: "Death", image: "./img/Death-icon.png" },
-    { value: "Ghost", image: "./img/Ghost-icon.png" },
-    { value: "Death", image: "./img/Death-icon.png" },
-  ];
-  
-  let clicked = []
-  
-  function userClick(icon) {
-      clicked.push(icon);
+  { value: "Ghost", image: "./img/Ghost-icon.png" },
+  { value: "Death", image: "./img/Death-icon.png" },
+  { value: "Ghost", image: "./img/Ghost-icon.png" },
+  { value: "Death", image: "./img/Death-icon.png" },
+];
+
+function userClick(icon) {
+  clicked.push(icon);
+}
+let clicked = [];
+
+let firstGuess = null;
+let secondGuess = null;
+
+let guessCount = 0;
+
+shuffle(gameIcons);
+
+// Winning Combos
+let winningCombos = [
+  ["Ghost", "Ghost"],
+  ["Death", "Death"],
+];
+
+let iconsEl = document.querySelectorAll(".gameIcons");
+
+iconsEl.forEach(function (el, index) {
+  el.addEventListener("click", function () {
+    let clickedIcon = gameIcons[index];
+    guessCount++;
+    let myspan = document.getElementByName("aa");
+    alert(myspan.innerText);
+    el.setAttribute("src", clickedIcon.image);
+    userClick(clickedIcon);
+    console.log("Clicked icons", clicked);
+
+    if (firstGuess === null) {
+      firstGuess = index
+      alert("First Guess - Total Guesses " + firstGuess)
+  } else {
+      firstGuess = index
+      alert("Second Guess - Total Guesses " + firstGuess)
+      
   }
-  
-  // Shuffle gameIcons array
-  shuffle(gameIcons);
-  
-  // Winning Combos
-  let winningCombos = [["Ghost", "Ghost"], ["Death", "Death"]];
-  
-  let iconsEl = document.querySelectorAll(".gameIcons");
-  
-  iconsEl.forEach(function (el, index) {
-    el.addEventListener("click", function () {
-      // Get the clicked icon
-      let clickedIcon = gameIcons[index];
-      // Push the clicked icon to the clicked array
-      userClick(clickedIcon);
-      console.log("Clicked icons", clicked);
-    });
+
+
+    if (clicked.length === winningCombos[0].length) {
+      let clickedValues = clicked.map((icon) => icon.value);
+      let comboValues = winningCombos[0];
+
+      if (clickedValues.toString() === comboValues.toString()) {
+        console.log("You win!");
+        alert("correct")
+      } else {
+        console.log("Try again!");
+        alert("wrong")
+      }
+    }
   });
+});
+
+function restartGame() {
+
+}
